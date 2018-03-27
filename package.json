@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "Splash page for new Osteopathic.org",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "dev": "gulp"
+  },
   "author": "Patrick Sinco <psinco@gmail.com>",
   "license": "ISC",
   "devDependencies": {
@@ -14,6 +16,8 @@
     "gulp-autoprefixer": "^5.0.0",
     "gulp-babel": "^7.0.1",
     "gulp-imagemin": "^4.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.2.1",
     "gulp-sourcemaps": "^2.6.4",

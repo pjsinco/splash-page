@@ -5,6 +5,12 @@ var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
+var plumber = require('gulp-plumber');
+var notify = require('gulp-notify');
+
+function onError(error) {
+  this.emit('end');
+}
 
 gulp.task('js', function() {
   return gulp.src('src/scripts/**/*.js')
@@ -13,12 +19,16 @@ gulp.task('js', function() {
     .pipe(rename('pilot.bundle.js'))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist'))
-    .pipe(browserSync.reload({ stream: true }));
+    .pipe(browserSync.reload({ stream: true }))
+    .pipe(notify({ message: 'Browserified!' }));
 })
 
 gulp.task('sass', function() {
   return gulp.src('src/styles/**/*.scss')
-    .pipe(sass())
+    .pipe(plumber({ errorHandler: onError }))
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(sourcemaps.write())
     .pipe(rename('pilot.styles.css'))
     .pipe(autoprefixer({
       browsers: [
@@ -28,7 +38,8 @@ gulp.task('sass', function() {
       ]
     }))
     .pipe(gulp.dest('dist'))
-    .pipe(browserSync.reload({ stream: true }));
+    .pipe(browserSync.reload({ stream: true }))
+    .pipe(notify({ message: 'Sassed!' }));
 });
 
 gulp.task('watch', function() {
