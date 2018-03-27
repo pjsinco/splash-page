@@ -1,0 +1,11 @@
+{
+  "name": "osteo-pilot",
+  "version": "0.1.0",
+  "description": "Splash page for new Osteopathic.org",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Patrick Sinco <psinco@gmail.com>",
+  "license": "ISC"
+}
