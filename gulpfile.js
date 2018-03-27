@@ -7,10 +7,18 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var plumber = require('gulp-plumber');
 var notify = require('gulp-notify');
+var imagemin = require('gulp-imagemin');
 
 function onError(error) {
   this.emit('end');
 }
+
+gulp.task('images', function() {
+  gulp.src('src/images/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('dist/images'))
+    .pipe(browserSync.reload({ stream: true }))
+})
 
 gulp.task('js', function() {
   return gulp.src('src/scripts/**/*.js')
@@ -19,8 +27,8 @@ gulp.task('js', function() {
     .pipe(rename('pilot.bundle.js'))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist'))
-    .pipe(browserSync.reload({ stream: true }))
     .pipe(notify({ message: 'Browserified!' }));
+    .pipe(browserSync.reload({ stream: true }))
 })
 
 gulp.task('sass', function() {
@@ -38,8 +46,8 @@ gulp.task('sass', function() {
       ]
     }))
     .pipe(gulp.dest('dist'))
-    .pipe(browserSync.reload({ stream: true }))
     .pipe(notify({ message: 'Sassed!' }));
+    .pipe(browserSync.reload({ stream: true }))
 });
 
 gulp.task('watch', function() {
