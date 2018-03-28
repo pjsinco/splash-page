@@ -1,8 +1,6 @@
-$flexboxgrid-gutter-width: 260px;
-
 @import './../../bower_components/reset-css/reset';
-@import './../../bower_components/sass-flex-mixin/_flex';
-@import './../../bower_components/flexboxgrid-sass/flexboxgrid';
+/*@import './../../bower_components/sass-flex-mixin/_flex';*/
+/*@import './../../bower_components/flexboxgrid-sass/flexboxgrid';*/
 @import url("https://use.typekit.net/vdi5qvx.css");
 
 $navy: #000066;
@@ -11,6 +9,7 @@ $seaserpent: #11c7eb;
 $orange: #ffaa00;
 $white: #ffffff;
 
+$large-start: 992px;
 
 @import 'super';
 @import 'feature';
@@ -30,8 +29,23 @@ h1 {
   line-height: 77px;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .fixed {
   position: fixed;
+}
+
+.container-fluid {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.wrap {
+  margin: auto;
+  max-width: 71.25rem;
 }
 
 .container {
@@ -41,5 +55,5 @@ h1 {
 }
 
 .module {
-  margin-bottom: 5rem;
+  margin-bottom: 8rem;
 }

@@ -1,29 +1,42 @@
 .feature {
-  position: relative;
   display: flex;  
+  flex-direction: column;
+  position: relative;
   height: 600px;
+  
+  @media screen and (min-width: $large-start) {
+    flex-direction: row;
+  }
 
 }
 
 .feature-image {
-  position: absolute;
-  /*top: 0;*/
-  /*width: 50%;*/
+  @media screen and (min-width: $large-start) {
+    position: absolute;
+  }
 
   &-left {
-   left: -30.5%;
+    @media screen and (min-width: $large-start) {
+      left: -28%;
+    }
   }
 }
 
 .feature-col {
-  flex-basis: 50%;
+  @media screen and (min-width: $large-start) {
+    flex-basis: 50%;
+  }
 
   &-right {
-    padding-left: 8.75rem;
+    @media screen and (min-width: $large-start) {
+      padding-left: 8.75rem;
+    }
   }
 
   &-left {
-    padding-right: 8.75rem;
+    @media screen and (min-width: $large-start) {
+      padding-right: 8.75rem;
+    }
   }
 }
 
