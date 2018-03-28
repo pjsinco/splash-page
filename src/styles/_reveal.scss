@@ -1,0 +1,31 @@
+/* Borrowed from Clique Studios */
+.reveal {
+	opacity: 0;
+	transform: translate3d(0, 40px, 0);
+	transition:  transform .7s .1s cubic-bezier(0.175, 0.885, 0.320, 1.275), opacity .7s .1s;
+
+	&.on {
+		opacity:  1;
+		transform: translate3d(0, 0, 0);
+
+		&.fixed:after {
+			width: 200px;
+		}
+		&.auto:after {
+			width: 100%;
+		}
+	}
+}
+
+.reveal-delay-100 {
+	transition: transform .7s .2s cubic-bezier(0.175, 0.885, 0.320, 1.275), opacity .7s .2s;
+}
+.reveal-delay-200 {
+	transition: transform .7s .3s cubic-bezier(0.175, 0.885, 0.320, 1.275), opacity .7s .3s;
+}
+.reveal-delay-300 {
+	transition: transform .7s .4s cubic-bezier(0.175, 0.885, 0.320, 1.275), opacity .7s .4s;
+}
+.reveal-delay-400 {
+	transition: transform .7s .5s cubic-bezier(0.175, 0.885, 0.320, 1.275), opacity .7s .5s;
+}

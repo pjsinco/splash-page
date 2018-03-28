@@ -7,8 +7,9 @@
 .fan-l img,
 .fan-r img {
   transition-property: transform;
-  transition-duration: .5s;
-  transition-timing-function: ease-out;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+//  transition-timing-function: ease-out;
 }
 
 .fan {
@@ -26,11 +27,11 @@
     z-index: 4;
 
     .fan-out &.fan-l img {
-      transform: translateX(-68%) scale(.8);
+      transform: translate3d(-68%, 0, 0) scale(.8);
     }
 
     .fan-out &.fan-r img {
-      transform: translateX(68%) scale(.8);
+      transform: translate3d(68%, 0, 0) scale(.8);
     }
   }
 
@@ -38,17 +39,20 @@
     @extend %fan;
     z-index: 3;
 
-    &.fan-r img,
+    &.fan-r img {
+      transition-delay: .1s;
+    }
+
     &.fan-l img {
-      //transition-delay: .2s;
+      transition-delay: .2s;
     }
 
     .fan-out &.fan-l img {
-      transform: translateX(-117%) scale(.6);
+      transform: translate3d(-117%, 0, 0) scale(.6);
     }
 
     .fan-out &.fan-r img {
-      transform: translateX(117%) scale(.6);
+      transform: translate3d(117%, 0, 0) scale(.6);
     }
   }
 
@@ -56,20 +60,20 @@
     @extend %fan;
     z-index: 1;
 
-    &.fan-r img,
+    &.fan-r img {
+      transition-delay: .3s;
+    }
     &.fan-l img {
-      //transition-delay: .4s;
+      transition-delay: .4s;
     }
 
     .fan-out &.fan-l img {
-      transform: translateX(-153%) scale(.3);
+      transform: translate3d(-153%, 0, 0) scale(.3);
     }
 
     .fan-out &.fan-r img {
-      transform: translateX(153%) scale(.3);
+      transform: translate3d(153%, 0, 0) scale(.3);
     }
   }
-
-
 }
 

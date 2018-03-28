@@ -11,12 +11,27 @@ https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
 
 require('./../../node_modules/waypoints/lib/noframework.waypoints.min.js');
 
-var waypoint = new Waypoint({
-  element: document.querySelector('.fan'),
-  handler: function handler(direction) {
-    this.element.classList.add('fan-out');
-  }
-});
+window.onload = function () {
+  var reveals = document.querySelectorAll('.reveal');
+
+  reveals.forEach(function (revealElement) {
+    var waypoint = new Waypoint({
+      element: revealElement,
+      handler: function handler() {
+        this.element.classList.add('on');
+      },
+      offset: '100%'
+    });
+  });
+
+  var waypoint = new Waypoint({
+    element: document.querySelector('.fan'),
+    handler: function handler(direction) {
+      this.element.classList.add('fan-out');
+    },
+    offset: '25%'
+  });
+};
 
 },{"./../../node_modules/waypoints/lib/noframework.waypoints.min.js":1}]},{},[2])
 

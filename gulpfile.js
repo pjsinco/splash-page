@@ -44,7 +44,8 @@ gulp.task('scripts', function() {
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./dist/'))
-    .pipe(notify({ message: 'Browserified!' }));
+    .pipe(notify({ message: 'Browserified!' }))
+    .pipe(browserSync.reload({ stream: true }));
 
 //  return gulp.src('src/scripts/**/*.js')
 //    .pipe(sourcemaps.init())

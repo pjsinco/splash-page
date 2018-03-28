@@ -1,11 +1,30 @@
 .super {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
   background-color: $navy;
 
   &__body {
+    align-self: center;
     text-align: center;
     color: $white;
-  }
 
+    h1 {
+      margin-bottom: 2rem;
+      font-size: 64px;  
+      line-height: 77px;
+    }
+
+    h5 {
+      margin: 0 auto 3rem;
+      width: 67%;
+      font-size: 30px;
+      line-height: 42px;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+  }
 }
+

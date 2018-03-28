@@ -12,6 +12,8 @@ $large-start: 992px;
 @import 'super';
 @import 'feature';
 @import 'fan';
+@import 'reveal';
+@import 'btn';
 
 html {
   font-size: 100%;
@@ -31,6 +33,10 @@ h1 {
 img {
   max-width: 100%;
   height: auto;
+}
+
+a {
+  text-decoration: none;
 }
 
 .fixed {
