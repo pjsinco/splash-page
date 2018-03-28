@@ -20,6 +20,12 @@
       left: -28%;
     }
   }
+
+  &-right {
+    @media screen and (min-width: $large-start) {
+      right: -28%;
+    }
+  }
 }
 
 .feature-col {
