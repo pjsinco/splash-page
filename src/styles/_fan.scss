@@ -6,7 +6,9 @@
 
 .fan-l img,
 .fan-r img {
-  transition: transform .5s ease-in;
+  transition-property: transform;
+  transition-duration: .5s;
+  transition-timing-function: ease-out;
 }
 
 .fan {
@@ -36,6 +38,11 @@
     @extend %fan;
     z-index: 3;
 
+    &.fan-r img,
+    &.fan-l img {
+      //transition-delay: .2s;
+    }
+
     .fan-out &.fan-l img {
       transform: translateX(-117%) scale(.6);
     }
@@ -48,6 +55,11 @@
   &-quaternary {
     @extend %fan;
     z-index: 1;
+
+    &.fan-r img,
+    &.fan-l img {
+      //transition-delay: .4s;
+    }
 
     .fan-out &.fan-l img {
       transform: translateX(-153%) scale(.3);
