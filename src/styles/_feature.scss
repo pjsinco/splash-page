@@ -1,0 +1,37 @@
+.feature {
+  position: relative;
+  display: flex;  
+  height: 600px;
+
+}
+
+.feature-image {
+  position: absolute;
+  /*top: 0;*/
+  /*width: 50%;*/
+
+  &-left {
+   left: -30.5%;
+  }
+}
+
+.feature-col {
+  flex-basis: 50%;
+
+  &-right {
+    padding-left: 8.75rem;
+  }
+
+  &-left {
+    padding-right: 8.75rem;
+  }
+}
+
+.feature-content {
+  align-self: center;
+}
+
+.feature-body {
+}
+
+

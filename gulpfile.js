@@ -27,8 +27,8 @@ gulp.task('js', function() {
     .pipe(rename('pilot.bundle.js'))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist'))
-    .pipe(notify({ message: 'Browserified!' }));
-    .pipe(browserSync.reload({ stream: true }))
+    .pipe(notify({ message: 'Browserified!' }))
+    .pipe(browserSync.reload({ stream: true }));
 })
 
 gulp.task('sass', function() {
@@ -46,8 +46,8 @@ gulp.task('sass', function() {
       ]
     }))
     .pipe(gulp.dest('dist'))
-    .pipe(notify({ message: 'Sassed!' }));
-    .pipe(browserSync.reload({ stream: true }))
+    .pipe(notify({ message: 'Sassed!' }))
+    .pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task('watch', function() {
@@ -59,6 +59,7 @@ gulp.task('watch', function() {
 
   gulp.watch('src/styles/**/*.scss', ['sass']);
   gulp.watch('src/scripts/**/*.js', ['js']);
+  gulp.watch('src/images/*', ['images']);
   gulp.watch('index.html').on('change', browserSync.reload);
 })
 

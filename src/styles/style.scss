@@ -1,7 +1,45 @@
-body {
-  color: steelblue;
+$flexboxgrid-gutter-width: 260px;
+
+@import './../../bower_components/reset-css/reset';
+@import './../../bower_components/sass-flex-mixin/_flex';
+@import './../../bower_components/flexboxgrid-sass/flexboxgrid';
+@import url("https://use.typekit.net/vdi5qvx.css");
+
+$navy: #000066;
+$teal: #22a49c;
+$seaserpent: #11c7eb;
+$orange: #ffaa00;
+$white: #ffffff;
+
+
+@import 'super';
+@import 'feature';
+
+html {
+  font-size: 100%;
+  line-height: 1;
+  text-size-adjust: 100%;
 }
 
-.wrapper {
+body {
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
+h1 {
+  font-size: 64px;  
+  line-height: 77px;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.container {
+  margin: 0 auto;
+  position: relative;
+  max-width: 1140px;
+}
+
+.module {
+  margin-bottom: 5rem;
 }

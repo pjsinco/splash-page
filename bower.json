@@ -1,0 +1,22 @@
+{
+  "name": "osteo-pilot-splash",
+  "description": "Splash page for new Osteopathic.org",
+  "main": "",
+  "authors": [
+    "Patrick Sinco <psinco@osteopathic.org>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "flexboxgrid-sass": "^8.0.5",
+    "reset-css": "^3.0.0"
+  }
+}
