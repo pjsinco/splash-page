@@ -8,6 +8,12 @@ var autoprefixer = require('gulp-autoprefixer');
 var plumber = require('gulp-plumber');
 var notify = require('gulp-notify');
 var imagemin = require('gulp-imagemin');
+var concat = require('gulp-concat');
+var browserify = require('browserify');
+var babelify = require('babelify');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
+
 
 function onError(error) {
   this.emit('end');
@@ -20,15 +26,34 @@ gulp.task('images', function() {
     .pipe(browserSync.reload({ stream: true }))
 })
 
-gulp.task('js', function() {
-  return gulp.src('src/scripts/**/*.js')
-    .pipe(sourcemaps.init())
-    .pipe(babel())
+gulp.task('scripts', function() {
+  var b = browserify({
+      entries: './src/scripts/main.js',
+      debug: true,
+  });
+
+  b.transform('babelify', { presets: ['env'] })
+    .bundle()
+    .on('error', notify.onError({
+        message: 'Error: <%= error.message %>',
+        sound: 'Pop'
+    }))
+    .pipe(source('main.js'))
     .pipe(rename('pilot.bundle.js'))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('dist'))
-    .pipe(notify({ message: 'Browserified!' }))
-    .pipe(browserSync.reload({ stream: true }));
+    .pipe(buffer())
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('./dist/'))
+    .pipe(notify({ message: 'Browserified!' }));
+
+//  return gulp.src('src/scripts/**/*.js')
+//    .pipe(sourcemaps.init())
+//    .pipe(babel())
+//    .pipe(concat('pilot.bundle.js'))
+//    .pipe(sourcemaps.write('.'))
+//    .pipe(gulp.dest('dist'))
+//    .pipe(notify({ message: 'Scripts gulped!' }))
+//    .pipe(browserSync.reload({ stream: true }));
 })
 
 gulp.task('sass', function() {
@@ -58,7 +83,7 @@ gulp.task('watch', function() {
   });
 
   gulp.watch('src/styles/**/*.scss', ['sass']);
-  gulp.watch('src/scripts/**/*.js', ['js']);
+  gulp.watch('src/scripts/**/*.js', ['scripts']);
   gulp.watch('src/images/*', ['images']);
   gulp.watch('index.html').on('change', browserSync.reload);
 })
