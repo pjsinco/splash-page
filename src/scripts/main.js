@@ -47,6 +47,20 @@ console.dir($(this));
     }
   })
 
+  new Waypoint({
+    element: document.querySelector('#myAoa'),
+    handler: function(direction) {
+      if (direction === 'down') {
+        const innerScreen = document.querySelector('#myAoa .feature-inner-screen')
+        innerScreen.classList.add('demo')
+        window.setTimeout(function() {
+          innerScreen.classList.remove('demo')
+        }, 15000)
+      }
+    },
+    offset: '25%',
+  })
+
 //  new Waypoint({
 //    element: document.querySelector('.super'),
 //    handler: function(direction) {
