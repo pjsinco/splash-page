@@ -11,17 +11,25 @@ $large-start: 992px;
 
 @import 'super';
 @import 'feature';
+@import 'feature-fixed';
 @import 'fan';
 @import 'reveal';
 @import 'btn';
+@import 'titlescreen';
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
 
 html {
+  height: 100%;
   font-size: 100%;
   line-height: 1;
   text-size-adjust: 100%;
 }
 
 body {
+  height: 100%;
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -44,12 +52,13 @@ a {
   top: 50px;
 }
 
+.stuck,
 .fixed {
   position: fixed;
-  top: 50px;
+  top: 0px;
   left: 0;
   right: 0;
-  z-index: -1;
+  z-index: 10;
 }
 
 .container-fluid {
@@ -73,9 +82,11 @@ a {
 }
 
 .main {
-  overflow: hidden;
+  height: 100%;
+  /*overflow: hidden;*/
 }
 
 .main-body {
+  height: 100%;
   background-color: $white;
 }
