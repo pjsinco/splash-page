@@ -1,0 +1,43 @@
+
+
+.feature-fixed {
+  position: relative;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 7% 80%;
+  background-attachment: fixed;
+
+
+  &__content {
+    width: 50%;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+
+//    &:after {
+//      content: "";
+//      display: block;
+//      width: 100%;
+//      padding: 60% 0;
+//      margin: 2em auto 0;
+//    }
+  }
+
+  &.img-students {
+    background-image: url('images/bg-laptop-students.jpg');
+    /*background-image: url('images/laptop-life-career-1.jpg');*/
+  }
+
+  &.img-residents {
+    background-image: url('images/bg-laptop-residents.jpg');
+    /*background-image: url('images/laptop-life-career-1.jpg');*/
+  }
+
+  &.img-doctors {
+    background-image: url('images/bg-laptop-dos.jpg');
+    /*background-image: url('images/laptop-life-career-1.jpg');*/
+  }
+}

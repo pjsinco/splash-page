@@ -11,17 +11,24 @@ $large-start: 992px;
 
 @import 'super';
 @import 'feature';
+@import 'feature-fixed';
 @import 'fan';
 @import 'reveal';
 @import 'btn';
 
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
 html {
+  height: 100%;
   font-size: 100%;
   line-height: 1;
   text-size-adjust: 100%;
 }
 
 body {
+  height: 100%;
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -73,9 +80,11 @@ a {
 }
 
 .main {
-  overflow: hidden;
+  height: 100%;
+  /*overflow: hidden;*/
 }
 
 .main-body {
+  height: 100%;
   background-color: $white;
 }
