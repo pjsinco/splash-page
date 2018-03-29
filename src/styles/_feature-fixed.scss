@@ -17,11 +17,26 @@
     bottom: auto;
     transform: translateY(-50%);
 
+    &--dark {
+      @extend .feature-fixed__content;
+      color: $white;
+
+      & h2 {
+        color: $white !important;
+      }
+
+      & h5 {
+        color: $white !important;
+        opacity: .5;
+      }
+    }
+
     & h2 {
       margin-bottom: 1rem;
       font-weight: 200;
       font-size: 42px;
       color: $navy
+
     }
 
     & h5 {
