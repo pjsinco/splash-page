@@ -3,13 +3,23 @@
   padding: 14px 30px;
   width: auto;
   border-radius: 5px;
-  background: #22a49c;
   text-align: center;
   color: #fff;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
   letter-spacing: .5px;
-  border: 1px solid #22a49c;
+  border-width: 1px;
+  border-style: solid;
   transition: .7s;
+}
+
+.btn-teal {
+  border-color: $teal;
+  background-color: $teal;
+}
+
+.btn-blue {
+  border-color: $navy;
+  background-color: $navy;
 }

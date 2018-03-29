@@ -23,43 +23,33 @@ $(document).ready(function () {
     handler: function handler(direction) {
       this.element.classList.add('fan-out');
     },
-    offset: '-150%'
+    //offset: '-150%',
+    offset: '25%'
   });
 
-  new Waypoint({
-    element: document.querySelector('.super'),
-    handler: function handler(direction) {
-      if (direction === 'down') {
-        mainBody.classList.remove('fixed');
-        mainBody.style.paddingTop = '50px';
-        mainBody.scrollIntoView();
-      }
-    },
-    offset: '-100%'
-  });
-
-  new Waypoint({
-    element: document.querySelector('#fixedFlag'),
-    handler: function handler(direction) {
-      if (direction === 'up') {
-        mainBody.classList.add('fixed');
-        mainBody.style.paddingTop = '0';
-        //window.scrollBy(0, window.innerHeight) 
-        //window.scrollBy(0, -300) 
-      }
-    }
-    //offset: '50px',
-  });
-
-  //  const fixedItemWaypoint = new Waypoint({
-  //    element: fixedItem,
+  //  new Waypoint({
+  //    element: document.querySelector('.super'),
   //    handler: function(direction) {
-  //console.log(direction);
+  //      if (direction === 'down') {
+  //        mainBody.classList.remove('fixed')
+  //        mainBody.style.paddingTop = '50px'
+  //        mainBody.scrollIntoView()
+  //      } 
+  //    },
+  //    offset: '-100%',
+  //  })
+  //
+  //  new Waypoint({
+  //    element: document.querySelector('#fixedFlag'),
+  //    handler: function(direction) {
   //      if (direction === 'up') {
-  //console.log('fixeditemgoingup');
-  //        this.element.classList.add('fixed')
+  //        mainBody.classList.add('fixed') 
+  //        mainBody.style.paddingTop = '0'
+  //        //window.scrollBy(0, window.innerHeight) 
+  //        //window.scrollBy(0, -300) 
   //      }
-  //    }
+  //    },
+  //    //offset: '50px',
   //  })
 });
 
