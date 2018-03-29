@@ -14,16 +14,28 @@
     color: $white;
 
     h1 {
-      margin-bottom: 2rem;
-      font-size: 64px;  
-      line-height: 77px;
+      margin-bottom: 1rem;
+      font-size: 2.25rem;
+      line-height: 1.3;
+      font-weight: 700;
+
+      @media screen and (min-width: $large-start) {
+        margin-bottom: 2rem;
+        font-size: 4rem;  
+        line-height: 1.4;
+      }
     }
 
-    h5 {
-      margin: 0 auto 3rem;
-      width: 67%;
-      font-size: 30px;
-      line-height: 42px;
+    h3 {
+      font-size: 1.5rem;
+      line-height: 1.4;
+      width: 100%;
+  
+      @media screen and (min-width: $large-start) {
+        margin: 0 auto 3rem;
+        width: 67%;
+        font-size: 1.875rem;
+      }
     }
 
     p {
