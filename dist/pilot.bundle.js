@@ -8,6 +8,8 @@ $(document).ready(function () {
 	var reveals = document.querySelectorAll('.reveal');
 	var mainBody = document.querySelector('.main-body');
 
+	var titleScreenText = '';
+
 	reveals.forEach(function (revealElement) {
 		new Waypoint({
 			element: revealElement,
@@ -25,6 +27,27 @@ $(document).ready(function () {
 		},
 		//offset: '-150%',
 		offset: '25%'
+	});
+
+	var titlescreen = new Waypoint.Sticky({
+		element: $('.titlescreen')[0],
+		handler: function handler() {
+			titleScreenText = $(this.element).html();
+			console.dir($(this));
+		}
+	});
+
+	new Waypoint({
+		element: document.querySelector('.wave'),
+		handler: function handler(direction) {
+			if (direction === 'down') {
+				//$('.sticky-wrapper .titlescreen').html('<h2>We\'ve expanded our news</h2>')
+				$('.sticky-wrapper .titlescreen').toggleClass('stuck');
+			} else {
+				//console.log(titleScreenText);
+				//$('.sticky-wrapper .titlescreen').html(titleScreenText)
+			}
+		}
 	});
 
 	//  new Waypoint({

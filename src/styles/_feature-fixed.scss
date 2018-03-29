@@ -10,12 +10,40 @@
 
 
   &__content {
-    width: 50%;
     position: absolute;
+    width: 100%;
     left: 5%;
     top: 50%;
     bottom: auto;
     transform: translateY(-50%);
+
+    & h2 {
+      margin-bottom: 1rem;
+      font-weight: 200;
+      font-size: 42px;
+      color: $navy
+    }
+
+    & h5 {
+      margin-bottom: 1rem;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: $seaserpent;
+    }
+
+    & li,
+    & p {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    @media screen and (min-width: $large-start) {
+      
+      width: 25%;
+    }
 
 //    &:after {
 //      content: "";
@@ -27,7 +55,8 @@
   }
 
   &.img-students {
-    background-image: url('images/bg-laptop-students.jpg');
+    background-image: url('images/bg-laptop-students-warm.jpg');
+    /*background-image: url('images/bg-laptop-students-teal.jpg');*/
     /*background-image: url('images/laptop-life-career-1.jpg');*/
   }
 
