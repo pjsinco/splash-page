@@ -39,8 +39,17 @@ a {
   text-decoration: none;
 }
 
+.relative {
+  position: relative;
+  top: 50px;
+}
+
 .fixed {
   position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+  z-index: -1;
 }
 
 .container-fluid {
@@ -61,4 +70,12 @@ a {
 
 .module {
   margin-bottom: 16rem;
+}
+
+.main {
+  overflow: hidden;
+}
+
+.main-body {
+  background-color: $white;
 }

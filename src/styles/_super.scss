@@ -2,7 +2,11 @@
   min-height: 100vh;
   min-width: 100vw;
   display: flex;
-  background-color: $navy;
+  background-color: rgba(0, 0, 102, .92);
+
+  &__bg {
+    background-image: url(images/laptop-life-career-1.jpg);
+  }
 
   &__body {
     align-self: center;
@@ -27,4 +31,3 @@
     }
   }
 }
-
