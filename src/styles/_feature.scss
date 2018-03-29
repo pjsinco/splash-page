@@ -53,4 +53,20 @@
 .feature-body {
 }
 
+.feature-inner-screen {
+  position: absolute;
+  top: 7%;
+  left: 14.3%;
+  overflow: hidden;
+  right: 0;
+  bottom: 18%;
 
+  & img {
+    transition: 11s transform ease-in-out;
+  }
+
+  &.demo img {
+    transform: translate3d(0, -53%, 0);
+  }
+
+}
