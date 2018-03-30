@@ -1,6 +1,6 @@
 .feature-fixed {
   position: relative;
-  padding: 3em 5% 210%;
+  padding: 3em 5% 0;
   height: 100%;
   overflow: hidden;
   background-repeat: no-repeat;
@@ -116,8 +116,19 @@
 
   & li,
   & p {
+    margin-bottom: 1rem;
     font-size: 1rem;
     line-height: 1.8;
+  }
+
+  & ul {
+    list-style: disc outside none;
+    margin-left: 0;
+    padding-left: 1rem;
+  }
+
+  & li {
+    left: 1rem;
   }
 
   @media screen and (min-width: $large-start) {

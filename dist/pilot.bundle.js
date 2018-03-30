@@ -20,20 +20,19 @@ $(document).ready(function () {
     });
   });
 
-  var fan = new Waypoint({
-    element: document.querySelector('.fan'),
-    handler: function handler(direction) {
-      this.element.classList.add('fan-out');
-    },
-    //offset: '-150%',
-    offset: '25%'
-  });
+  //  const fan = new Waypoint({
+  //    element: document.querySelector('.fan'),
+  //    handler: function(direction) {
+  //      this.element.classList.add('fan-out')
+  //    },
+  //    //offset: '-150%',
+  //    offset: '25%',
+  //  })
 
   var titlescreen = new Waypoint.Sticky({
     element: $('.titlescreen')[0],
     handler: function handler() {
       titleScreenText = $(this.element).html();
-      console.dir($(this));
     }
   });
 

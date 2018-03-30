@@ -86,7 +86,10 @@ a {
 }
 
 .main {
-  height: 100%;
+
+  @include mq(m) {
+    height: 100%;
+  }
   /*overflow: hidden;*/
 }
 
