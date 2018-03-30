@@ -8,31 +8,29 @@ $(document).ready(function () {
   var reveals = document.querySelectorAll('.reveal');
   var mainBody = document.querySelector('.main-body');
 
-  var titleScreenText = '';
-
-  reveals.forEach(function (revealElement) {
+  for (var i = 0, l = reveals.length; i < l; i++) {
     new Waypoint({
-      element: revealElement,
+      element: reveals[i],
       handler: function handler() {
         this.element.classList.add('on');
       },
       offset: '100%'
     });
-  });
+  }
 
-  //  const fan = new Waypoint({
-  //    element: document.querySelector('.fan'),
-  //    handler: function(direction) {
-  //      this.element.classList.add('fan-out')
-  //    },
-  //    //offset: '-150%',
-  //    offset: '25%',
-  //  })
+  var fan = new Waypoint({
+    element: document.querySelector('.fan'),
+    handler: function handler(direction) {
+      this.element.classList.add('fan-out');
+    },
+    //offset: '-150%',
+    offset: '25%'
+  });
 
   var titlescreen = new Waypoint.Sticky({
     element: $('.titlescreen')[0],
     handler: function handler() {
-      titleScreenText = $(this.element).html();
+      //titleScreenText = $(this.element).html()
     }
   });
 

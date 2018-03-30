@@ -16,6 +16,13 @@
   height: 680px;
   text-align: center;
 
+  & img {
+    width: 40%;
+
+    @include mq(l) {
+      width: auto;
+    }
+  }
 
   &-primary {
     @extend %fan;
@@ -27,11 +34,20 @@
     z-index: 4;
 
     .fan-out &.fan-l img {
-      transform: translate3d(-68%, 0, 0) scale(.8);
+      transform: translate3d(-36%, 0, 0) scale(.8);
+
+      @include mq(l) {
+        transform: translate3d(-68%, 0, 0) scale(.8);
+      }
     }
 
     .fan-out &.fan-r img {
-      transform: translate3d(68%, 0, 0) scale(.8);
+      transform: translate3d(36%, 0, 0) scale(.8);
+
+      @include mq(l) {
+        transform: translate3d(68%, 0, 0) scale(.8);
+      }
+
     }
   }
 
@@ -48,11 +64,20 @@
     }
 
     .fan-out &.fan-l img {
-      transform: translate3d(-117%, 0, 0) scale(.6);
+      transform: translate3d(-66%, 0, 0) scale(.6);
+
+      @include mq(l) {
+        transform: translate3d(-117%, 0, 0) scale(.6);
+      }
+
     }
 
     .fan-out &.fan-r img {
-      transform: translate3d(117%, 0, 0) scale(.6);
+      transform: translate3d(66%, 0, 0) scale(.6);
+
+      @include mq(l) {
+        transform: translate3d(117%, 0, 0) scale(.6);
+      }
     }
   }
 
@@ -68,11 +93,19 @@
     }
 
     .fan-out &.fan-l img {
-      transform: translate3d(-153%, 0, 0) scale(.3);
+      transform: translate3d(-95%, 0, 0) scale(.3);
+  
+      @include mq(l) {
+        transform: translate3d(-153%, 0, 0) scale(.3);
+      }
     }
 
     .fan-out &.fan-r img {
-      transform: translate3d(153%, 0, 0) scale(.3);
+      transform: translate3d(95%, 0, 0) scale(.3);
+
+      @include mq(l) {
+        transform: translate3d(153%, 0, 0) scale(.3);
+      }
     }
   }
 }

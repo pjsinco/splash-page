@@ -70,6 +70,10 @@ a {
   padding-right: 1rem;
 }
 
+.wrapped {
+  overflow: hidden;
+}
+
 .wrap {
   margin: auto;
   max-width: 71.25rem;
@@ -83,6 +87,7 @@ a {
 
 .module {
   margin-bottom: 16rem;
+  padding: 6rem 0;
 }
 
 .main {
