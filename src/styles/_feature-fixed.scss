@@ -37,12 +37,8 @@
     }
   }
 
-  @include mq(m) {
-    background-position: 7% 80%;
-  }
-
   @include mq(l) {
-    background-attachment: fixed;
+    background-position: 7% 80%;
 
     &.img-students {
       background-image: url('images/bg-laptop-students-warm.jpg');
@@ -56,16 +52,32 @@
       background-image: url('images/bg-laptop-dos.jpg');
     }
   }
+
+  @include mq(m) {
+    height: 70%;
+  }
+
+  @include mq(l) {
+    background-attachment: fixed;
+    height: 100%;
+  }
 }
 
 .feature-fixed__content {
 
   @include mq(m) {
     position: absolute;
-    width: 100%;
+    width: 45%;
     left: 5%;
-    top: 50%;
+    top: 8%;
     bottom: auto;
+    height: 100%;
+  }
+
+  @include mq(l) {
+    height: auto;
+    width: 25%;
+    top: 50%;
     transform: translateY(-50%);
   }
 
@@ -78,6 +90,18 @@
     margin: 2rem auto 0;
 
     @include mq(m) {
+      position: absolute;
+      top: -5%;
+      bottom: 0;
+      left: 0;
+      right: -210%;
+      width: 90%;
+      height: 100%;
+      /*margin: 0;*/
+      /*padding: 0;*/
+    }
+
+    @include mq(l) {
       display: none !important;
     }
   }
@@ -129,10 +153,5 @@
 
   & li {
     left: 1rem;
-  }
-
-  @media screen and (min-width: $large-start) {
-    
-    width: 25%;
   }
 }
