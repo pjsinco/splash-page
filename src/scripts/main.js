@@ -5,31 +5,29 @@ $(document).ready(function() {
   const reveals = document.querySelectorAll('.reveal')
   const mainBody = document.querySelector('.main-body')
 
-  let titleScreenText = ''
-
-  reveals.forEach(function(revealElement) {
+  for (let i = 0, l = reveals.length; i < l; i++) {
     new Waypoint({
-      element: revealElement,
+      element: reveals[i],
       handler: function() {
         this.element.classList.add('on')
       },
       offset: '100%',
     })
-  })
+  }
 
-//  const fan = new Waypoint({
-//    element: document.querySelector('.fan'),
-//    handler: function(direction) {
-//      this.element.classList.add('fan-out')
-//    },
-//    //offset: '-150%',
-//    offset: '25%',
-//  })
+  const fan = new Waypoint({
+    element: document.querySelector('.fan'),
+    handler: function(direction) {
+      this.element.classList.add('fan-out')
+    },
+    //offset: '-150%',
+    offset: '25%',
+  })
 
   const titlescreen = new Waypoint.Sticky({
     element: $('.titlescreen')[0],
     handler: function() {
-      titleScreenText = $(this.element).html()
+      //titleScreenText = $(this.element).html()
     }
   })
 
