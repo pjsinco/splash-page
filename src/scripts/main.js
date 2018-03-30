@@ -24,11 +24,13 @@ $(document).ready(function() {
     offset: '25%',
   })
 
-  const titlescreen = new Waypoint.Sticky({
-    element: $('.titlescreen')[0],
-    handler: function() {
-      //titleScreenText = $(this.element).html()
-    }
+  $('.titlescreen').each(function(i, item) {
+    new Waypoint.Sticky({
+      element: $(item),
+      handler: function() {
+        //titleScreenText = $(this.element).html()
+      }
+    })
   })
 
   new Waypoint({
