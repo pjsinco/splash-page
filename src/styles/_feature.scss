@@ -19,6 +19,13 @@
     @media screen and (min-width: $large-start) {
       left: -28%;
     }
+
+    &--small {
+      @include mq(l) {
+        left: 0%;
+        width: 50%;
+      }
+    }
   }
 
   &-right {
