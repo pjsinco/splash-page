@@ -1,87 +1,127 @@
-
-
 .feature-fixed {
   position: relative;
+  padding: 3em 5% 210%;
   height: 100%;
+  overflow: hidden;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 7% 80%;
-  background-attachment: fixed;
+  background-position: 50% 50%;
 
+  &.img-students {
+    background-color: $warm;
 
-  &__content {
+    .feature-fixed__content:after {
+      background-image: url('images/bg-phone-students.png');
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+    }
+  }
+
+  &.img-residents {
+    background-color: $teal;
+
+    .feature-fixed__content:after {
+      background-image: url('images/bg-phone-residents.png');
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+    }
+  }
+
+  &.img-doctors {
+    background-color: $navy;
+
+    .feature-fixed__content:after {
+      background-image: url('images/bg-phone-dos.png');
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+    }
+  }
+
+  @include mq(m) {
+    background-position: 7% 80%;
+  }
+
+  @include mq(l) {
+    background-attachment: fixed;
+
+    &.img-students {
+      background-image: url('images/bg-laptop-students-warm.jpg');
+    }
+
+    &.img-residents {
+      background-image: url('images/bg-laptop-residents.jpg');
+    }
+
+    &.img-doctors {
+      background-image: url('images/bg-laptop-dos.jpg');
+    }
+  }
+}
+
+.feature-fixed__content {
+
+  @include mq(m) {
     position: absolute;
     width: 100%;
     left: 5%;
     top: 50%;
     bottom: auto;
     transform: translateY(-50%);
+  }
 
-    &--dark {
-      @extend .feature-fixed__content;
-      color: $white;
+  &:after {
+    // phone image on small devices
+    content: '';
+    display: block;
+    width: 100%;
+    padding: 61% 0;
+    margin: 2rem auto 0;
 
-      & h2 {
-        color: $white !important;
-      }
-
-      & h5 {
-        color: $white !important;
-        opacity: .5;
-      }
+    @include mq(m) {
+      display: none !important;
     }
+  }
+
+  &--dark {
+    @extend .feature-fixed__content;
+    color: $white;
 
     & h2 {
-      margin-bottom: 1rem;
-      font-weight: 200;
-      font-size: 42px;
-      color: $navy
-
+      color: $white !important;
     }
 
     & h5 {
-      margin-bottom: 1rem;
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 12px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      color: $seaserpent;
+      color: $white !important;
+      opacity: .5;
     }
-
-    & li,
-    & p {
-      font-size: 1rem;
-      line-height: 1.8;
-    }
-
-    @media screen and (min-width: $large-start) {
-      
-      width: 25%;
-    }
-
-//    &:after {
-//      content: "";
-//      display: block;
-//      width: 100%;
-//      padding: 60% 0;
-//      margin: 2em auto 0;
-//    }
   }
 
-  &.img-students {
-    background-image: url('images/bg-laptop-students-warm.jpg');
-    /*background-image: url('images/bg-laptop-students-teal.jpg');*/
-    /*background-image: url('images/laptop-life-career-1.jpg');*/
+  & h2 {
+    margin-bottom: 1rem;
+    font-weight: 200;
+    font-size: 42px;
+    color: $navy
+
   }
 
-  &.img-residents {
-    background-image: url('images/bg-laptop-residents.jpg');
-    /*background-image: url('images/laptop-life-career-1.jpg');*/
+  & h5 {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: $seaserpent;
   }
 
-  &.img-doctors {
-    background-image: url('images/bg-laptop-dos.jpg');
-    /*background-image: url('images/laptop-life-career-1.jpg');*/
+  & li,
+  & p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  @media screen and (min-width: $large-start) {
+    
+    width: 25%;
   }
 }

@@ -4,11 +4,15 @@
 $navy: #000066;
 $teal: #22a49c;
 $seaserpent: #11c7eb;
+$warm: #f9f7f5;
 $orange: #ffaa00;
 $white: #ffffff;
 
+$small: 480px;
+$medium: 768px;
 $large-start: 992px;
 
+@import 'mixins';
 @import 'super';
 @import 'feature';
 @import 'feature-fixed';
