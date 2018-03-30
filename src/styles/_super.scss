@@ -35,7 +35,7 @@
       font-weight: 700;
       letter-spacing: -.5px;
 
-      @media screen and (min-width: $large-start) {
+      @include mq(l) {
         font-size: 4rem;  
       }
     }
@@ -46,7 +46,7 @@
       font-weight: 200;
       width: 100%;
   
-      @media screen and (min-width: $large-start) {
+      @include mq(l) {
         margin: 0 auto 3rem;
         width: 67%;
         font-size: 1.875rem;

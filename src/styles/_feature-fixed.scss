@@ -1,87 +1,157 @@
-
-
 .feature-fixed {
   position: relative;
+  padding: 3em 5% 0;
   height: 100%;
+  overflow: hidden;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 7% 80%;
-  background-attachment: fixed;
-
-
-  &__content {
-    position: absolute;
-    width: 100%;
-    left: 5%;
-    top: 50%;
-    bottom: auto;
-    transform: translateY(-50%);
-
-    &--dark {
-      @extend .feature-fixed__content;
-      color: $white;
-
-      & h2 {
-        color: $white !important;
-      }
-
-      & h5 {
-        color: $white !important;
-        opacity: .5;
-      }
-    }
-
-    & h2 {
-      margin-bottom: 1rem;
-      font-weight: 200;
-      font-size: 42px;
-      color: $navy
-
-    }
-
-    & h5 {
-      margin-bottom: 1rem;
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 12px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      color: $seaserpent;
-    }
-
-    & li,
-    & p {
-      font-size: 1rem;
-      line-height: 1.8;
-    }
-
-    @media screen and (min-width: $large-start) {
-      
-      width: 25%;
-    }
-
-//    &:after {
-//      content: "";
-//      display: block;
-//      width: 100%;
-//      padding: 60% 0;
-//      margin: 2em auto 0;
-//    }
-  }
+  background-position: 50% 50%;
 
   &.img-students {
-    background-image: url('images/bg-laptop-students-warm.jpg');
-    /*background-image: url('images/bg-laptop-students-teal.jpg');*/
-    /*background-image: url('images/laptop-life-career-1.jpg');*/
+    background-color: $warm;
+
+    .feature-fixed__content:after {
+      background-image: url('images/bg-phone-students.png');
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+    }
   }
 
   &.img-residents {
-    background-image: url('images/bg-laptop-residents.jpg');
-    /*background-image: url('images/laptop-life-career-1.jpg');*/
+    background-color: $teal;
+
+    .feature-fixed__content:after {
+      background-image: url('images/bg-phone-residents.png');
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+    }
   }
 
   &.img-doctors {
-    background-image: url('images/bg-laptop-dos.jpg');
-    /*background-image: url('images/laptop-life-career-1.jpg');*/
+    background-color: $navy;
+
+    .feature-fixed__content:after {
+      background-image: url('images/bg-phone-dos.png');
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+    }
+  }
+
+  @include mq(l) {
+    background-position: 7% 80%;
+
+    &.img-students {
+      background-image: url('images/bg-laptop-students-warm.jpg');
+    }
+
+    &.img-residents {
+      background-image: url('images/bg-laptop-residents-teal.jpg');
+    }
+
+    &.img-doctors {
+      background-image: url('images/bg-laptop-dos-navy.jpg');
+    }
+  }
+
+  @include mq(m) {
+    height: 70%;
+  }
+
+  @include mq(l) {
+    background-attachment: fixed;
+    height: 100%;
+  }
+}
+
+.feature-fixed__content {
+
+  @include mq(m) {
+    position: absolute;
+    width: 45%;
+    left: 5%;
+    top: 8%;
+    bottom: auto;
+    height: 100%;
+  }
+
+  @include mq(l) {
+    height: auto;
+    width: 25%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &:after {
+    // phone image on small devices
+    content: '';
+    display: block;
+    width: 100%;
+    padding: 61% 0;
+    margin: 2rem auto 0;
+
+    @include mq(m) {
+      position: absolute;
+      top: -5%;
+      bottom: 0;
+      left: 0;
+      right: -210%;
+      width: 90%;
+      height: 100%;
+      /*margin: 0;*/
+      /*padding: 0;*/
+    }
+
+    @include mq(l) {
+      display: none !important;
+    }
+  }
+
+  &--dark {
+    @extend .feature-fixed__content;
+    color: $white;
+
+    & h2 {
+      color: $white !important;
+    }
+
+    & h5 {
+      color: $white !important;
+      opacity: .5;
+    }
+  }
+
+  & h2 {
+    margin-bottom: 1rem;
+    font-weight: 200;
+    font-size: 42px;
+    color: $navy
+
+  }
+
+  & h5 {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: $seaserpent;
+  }
+
+  & li,
+  & p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  & ul {
+    list-style: disc outside none;
+    margin-left: 0;
+    padding-left: 1rem;
+  }
+
+  & li {
+    left: 1rem;
   }
 }

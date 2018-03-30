@@ -1,0 +1,9 @@
+@mixin mq($canvas) {
+  @if $canvas == s {
+    @media screen and (min-width: $small) { @content }
+  } @else if $canvas == m {
+    @media screen and (min-width: $medium) { @content }
+  } @else if $canvas == l {
+    @media screen and (min-width: $large-start) { @content }
+  } 
+}
