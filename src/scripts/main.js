@@ -6,11 +6,11 @@ $(document).ready(function() {
   const mainBody = document.querySelector('.main-body')
   const animations = document.querySelectorAll('.animated')
 
+  // Reveals
   for (let i = 0, l = reveals.length; i < l; i++) {
     new Waypoint({
       element: reveals[i],
       handler: function() {
-
         this.element.classList.add('on')
       },
       offset: '100%',

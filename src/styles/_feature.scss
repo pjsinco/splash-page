@@ -58,6 +58,26 @@
 }
 
 .feature-body {
+
+  & h2 {
+    @extend %h2-base;
+
+    &:after {
+      @extend %h2-after;
+    }
+  }
+
+  & h5 {
+    @extend %h5-base; 
+  }
+
+  p, li {
+    @extend %p-base;
+  }
+
+  ul {
+    @extend %ul-base;
+  }
 }
 
 .feature-inner-screen {
