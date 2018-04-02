@@ -4,16 +4,29 @@ $(document).ready(function() {
 
   const reveals = document.querySelectorAll('.reveal')
   const mainBody = document.querySelector('.main-body')
+  const animations = document.querySelectorAll('.animated')
 
   for (let i = 0, l = reveals.length; i < l; i++) {
     new Waypoint({
       element: reveals[i],
       handler: function() {
+
         this.element.classList.add('on')
       },
       offset: '100%',
     })
   }
+
+  // Animated fx
+  for (let i = 0, l = animations.length; i < l; i++) {
+    new Waypoint({
+      element: animations[i],
+      handler: function() {
+        this.element.classList.add('pulse')
+      },
+    })
+  }
+  
 
   const fan = new Waypoint({
     element: document.querySelector('.fan'),
@@ -27,23 +40,7 @@ $(document).ready(function() {
   $('.titlescreen').each(function(i, item) {
     new Waypoint.Sticky({
       element: $(item),
-      handler: function() {
-        //titleScreenText = $(this.element).html()
-      }
     })
-  })
-
-  new Waypoint({
-    element: document.querySelector('.wave'),
-    handler: function(direction) {
-      if (direction === 'down') {
-        //$('.sticky-wrapper .titlescreen').html('<h2>We\'ve expanded our news</h2>')
-        $('.sticky-wrapper .titlescreen').toggleClass('stuck')
-      } else {
-//console.log(titleScreenText);
-        //$('.sticky-wrapper .titlescreen').html(titleScreenText)
-      }
-    }
   })
 
   new Waypoint({
@@ -59,30 +56,4 @@ $(document).ready(function() {
     },
     offset: '25%',
   })
-
-//  new Waypoint({
-//    element: document.querySelector('.super'),
-//    handler: function(direction) {
-//      if (direction === 'down') {
-//        mainBody.classList.remove('fixed')
-//        mainBody.style.paddingTop = '50px'
-//        mainBody.scrollIntoView()
-//      } 
-//    },
-//    offset: '-100%',
-//  })
-//
-//  new Waypoint({
-//    element: document.querySelector('#fixedFlag'),
-//    handler: function(direction) {
-//      if (direction === 'up') {
-//        mainBody.classList.add('fixed') 
-//        mainBody.style.paddingTop = '0'
-//        //window.scrollBy(0, window.innerHeight) 
-//        //window.scrollBy(0, -300) 
-//      }
-//    },
-//    //offset: '50px',
-//  })
-
 })

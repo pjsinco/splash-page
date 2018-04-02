@@ -7,14 +7,26 @@ $(document).ready(function () {
 
   var reveals = document.querySelectorAll('.reveal');
   var mainBody = document.querySelector('.main-body');
+  var animations = document.querySelectorAll('.animated');
 
   for (var i = 0, l = reveals.length; i < l; i++) {
     new Waypoint({
       element: reveals[i],
       handler: function handler() {
+
         this.element.classList.add('on');
       },
       offset: '100%'
+    });
+  }
+
+  // Animated fx
+  for (var _i = 0, _l = animations.length; _i < _l; _i++) {
+    new Waypoint({
+      element: animations[_i],
+      handler: function handler() {
+        this.element.classList.add('pulse');
+      }
     });
   }
 
@@ -29,24 +41,8 @@ $(document).ready(function () {
 
   $('.titlescreen').each(function (i, item) {
     new Waypoint.Sticky({
-      element: $(item),
-      handler: function handler() {
-        //titleScreenText = $(this.element).html()
-      }
+      element: $(item)
     });
-  });
-
-  new Waypoint({
-    element: document.querySelector('.wave'),
-    handler: function handler(direction) {
-      if (direction === 'down') {
-        //$('.sticky-wrapper .titlescreen').html('<h2>We\'ve expanded our news</h2>')
-        $('.sticky-wrapper .titlescreen').toggleClass('stuck');
-      } else {
-        //console.log(titleScreenText);
-        //$('.sticky-wrapper .titlescreen').html(titleScreenText)
-      }
-    }
   });
 
   new Waypoint({
@@ -62,31 +58,6 @@ $(document).ready(function () {
     },
     offset: '25%'
   });
-
-  //  new Waypoint({
-  //    element: document.querySelector('.super'),
-  //    handler: function(direction) {
-  //      if (direction === 'down') {
-  //        mainBody.classList.remove('fixed')
-  //        mainBody.style.paddingTop = '50px'
-  //        mainBody.scrollIntoView()
-  //      } 
-  //    },
-  //    offset: '-100%',
-  //  })
-  //
-  //  new Waypoint({
-  //    element: document.querySelector('#fixedFlag'),
-  //    handler: function(direction) {
-  //      if (direction === 'up') {
-  //        mainBody.classList.add('fixed') 
-  //        mainBody.style.paddingTop = '0'
-  //        //window.scrollBy(0, window.innerHeight) 
-  //        //window.scrollBy(0, -300) 
-  //      }
-  //    },
-  //    //offset: '50px',
-  //  })
 });
 
 },{}]},{},[1])
