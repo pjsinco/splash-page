@@ -13,8 +13,10 @@ $(document).ready(function () {
   for (var i = 0, l = reveals.length; i < l; i++) {
     new Waypoint({
       element: reveals[i],
-      handler: function handler() {
-        this.element.classList.add('on');
+      handler: function handler(direction) {
+        if (direction === 'down') {
+          this.element.classList.add('on');
+        }
       },
       offset: '100%'
     });
@@ -24,9 +26,15 @@ $(document).ready(function () {
   for (var _i = 0, _l = animations.length; _i < _l; _i++) {
     new Waypoint({
       element: animations[_i],
-      handler: function handler() {
+      handler: function handler(direction) {
         //this.element.querySelector('h2').classList.remove('hidden')
-        this.element.classList.add('pulse');
+        if (direction === 'down') {
+          if (!this.element.classList.contains('pulse')) {
+            this.element.classList.add('pulse');
+          }
+        } else if (direction === 'up') {
+          this.element.classList.remove('pulse');
+        }
       }
     });
   }

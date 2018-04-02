@@ -10,8 +10,10 @@ $(document).ready(function() {
   for (let i = 0, l = reveals.length; i < l; i++) {
     new Waypoint({
       element: reveals[i],
-      handler: function() {
-        this.element.classList.add('on')
+      handler: function(direction) {
+        if (direction === 'down') {
+          this.element.classList.add('on')
+        }
       },
       offset: '100%',
     })
@@ -21,9 +23,15 @@ $(document).ready(function() {
   for (let i = 0, l = animations.length; i < l; i++) {
     new Waypoint({
       element: animations[i],
-      handler: function() {
+      handler: function(direction) {
         //this.element.querySelector('h2').classList.remove('hidden')
-        this.element.classList.add('pulse')
+        if (direction === 'down') {
+          if (! this.element.classList.contains('pulse')) {
+            this.element.classList.add('pulse')
+          }
+        } else if (direction === 'up') {
+          this.element.classList.remove('pulse')
+        }
       },
     })
   }

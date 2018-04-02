@@ -114,10 +114,9 @@
 }
 
 .fan__content {
-  position: relative;
-  left: 50%;
-  max-width: 50%;
-  transform: translateX(-50%);
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
 
   & p,
   & li {
