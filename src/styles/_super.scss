@@ -23,6 +23,19 @@
     background-color: rgba(53, 53, 53, 0.21);
   }
 
+  &__header {
+
+    a {
+      position: absolute;
+      left: 15%;
+      top: 5%;
+      width: 306px;
+      height: 39px;
+      background: url('images/aoa-logo-white.svg') no-repeat 50% 50%;
+    }
+
+  }
+
   &__body {
     align-self: center;
     text-align: center;
