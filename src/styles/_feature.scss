@@ -30,7 +30,7 @@
 
   &-right {
     @media screen and (min-width: $large-start) {
-      right: -28%;
+      right: -29.4%;
     }
   }
 }
@@ -89,6 +89,7 @@
   bottom: 18%;
 
   & img {
+    width: 727px;
     transition: 11s transform ease-in-out;
   }
 
