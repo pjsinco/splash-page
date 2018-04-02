@@ -19,7 +19,7 @@ $large-start: 992px;
 @import 'fan';
 @import 'reveal';
 @import 'btn';
-@import 'titlescreen';
+@import 'titlebar';
 
 *, *::after, *::before {
   box-sizing: border-box;
@@ -101,4 +101,9 @@ a {
 .main-body {
   height: 100%;
   background-color: $white;
+}
+
+.hidden {
+  visibility: hidden;
+  
 }
