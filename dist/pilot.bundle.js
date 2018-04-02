@@ -9,11 +9,11 @@ $(document).ready(function () {
   var mainBody = document.querySelector('.main-body');
   var animations = document.querySelectorAll('.animated');
 
+  // Reveals
   for (var i = 0, l = reveals.length; i < l; i++) {
     new Waypoint({
       element: reveals[i],
       handler: function handler() {
-
         this.element.classList.add('on');
       },
       offset: '100%'
@@ -59,6 +59,17 @@ $(document).ready(function () {
     },
     offset: '25%'
   });
+
+  $('.scroll-down').on('click', function (evt) {
+    event.preventDefault();
+    smoothScroll($('#audienceStudents'));
+  });
+
+  function smoothScroll(target) {
+    $('body, html').animate({
+      'scrollTop': target.offset().top
+    }, 600);
+  }
 });
 
 },{}]},{},[1])

@@ -107,3 +107,19 @@ a {
   visibility: hidden;
   
 }
+
+.scroll-down {
+  position: absolute;
+  bottom: 5%;
+  width: 38px;
+  height: 44px;
+  background: url('images/arrow-bottom.svg') no-repeat 50% 50%;
+  
+}
+
+.image-replace {
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
