@@ -57,4 +57,15 @@ $(document).ready(function() {
     },
     offset: '25%',
   })
+
+  $('.scroll-down').on('click', function(evt) {
+    event.preventDefault()
+    smoothScroll($('#audienceStudents'))
+  })
+
+  function smoothScroll(target) {
+    $('body, html').animate({
+      'scrollTop': target.offset().top,
+    }, 600)
+  }
 })

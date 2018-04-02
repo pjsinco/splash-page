@@ -13,7 +13,9 @@
 }
 
 .fan {
+  position: relative;
   height: 680px;
+  margin-bottom: 4rem;
   text-align: center;
 
   & img {
@@ -23,6 +25,7 @@
       width: auto;
     }
   }
+
 
   &-primary {
     @extend %fan;
@@ -110,3 +113,32 @@
   }
 }
 
+.fan__content {
+  position: relative;
+  left: 50%;
+  max-width: 50%;
+  transform: translateX(-50%);
+
+  & p,
+  & li {
+    /*position: absolute;*/
+    /*bottom: -30%;*/
+    @extend %p-base;
+  }
+
+  & h2 {
+    @extend %h2-base;
+
+    &:after {
+      @extend %h2-after;
+    }
+  }
+
+  & h5 {
+    @extend %h5-base;
+  }
+
+  & ul {
+    @extend %ul-base;
+  }
+}
