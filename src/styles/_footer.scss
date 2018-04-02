@@ -1,0 +1,33 @@
+%col-base {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.footer {
+  background-color: $warm;
+}
+
+.footer__container {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 4.375rem;
+  padding-bottom: 4.375rem;
+
+  & .col-2 {
+    @extend %col-base;
+    -ms-flex-preferred-size: 16.6666666667%;
+    flex-basis: 16.6666666667%;
+    max-width: 16.6666666667%;
+  }
+
+  & .col-3 {
+    @extend %col-base;
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+}
+
+

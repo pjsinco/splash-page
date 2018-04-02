@@ -7,6 +7,7 @@ $seaserpent: #11c7eb;
 $warm: #f9f7f5;
 $orange: #ffaa00;
 $white: #ffffff;
+$dark: #2a2a2a;
 
 $small: 480px;
 $medium: 768px;
@@ -20,6 +21,7 @@ $large-start: 992px;
 @import 'reveal';
 @import 'btn';
 @import 'titlebar';
+@import 'footer';
 
 *, *::after, *::before {
   box-sizing: border-box;
@@ -35,6 +37,7 @@ html {
 body {
   height: 100%;
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: $dark;
 }
 
 h1 {
@@ -49,6 +52,12 @@ img {
 
 a {
   text-decoration: none;
+  cursor: pointer; 
+  color: $dark; 
+}
+
+p, li {
+  @extend %p-base;
 }
 
 .relative {
