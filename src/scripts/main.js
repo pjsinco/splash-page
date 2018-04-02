@@ -22,6 +22,7 @@ $(document).ready(function() {
     new Waypoint({
       element: animations[i],
       handler: function() {
+        //this.element.querySelector('h2').classList.remove('hidden')
         this.element.classList.add('pulse')
       },
     })
@@ -37,7 +38,7 @@ $(document).ready(function() {
     offset: '25%',
   })
 
-  $('.titlescreen').each(function(i, item) {
+  $('.titlebar').each(function(i, item) {
     new Waypoint.Sticky({
       element: $(item),
     })
