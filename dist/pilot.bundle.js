@@ -36,6 +36,7 @@ $(document).ready(function () {
           this.element.classList.remove('pulse');
         }
       }
+      //offset: 64, 
     });
   }
 

@@ -12,6 +12,11 @@
   border-width: 1px;
   border-style: solid;
   transition: .7s;
+
+  &:hover {
+    background: #fff;
+    color: $navy;
+  }
 }
 
 .btn-teal {
