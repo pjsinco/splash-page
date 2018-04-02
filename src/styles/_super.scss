@@ -21,6 +21,7 @@
     /*background-color: rgba(0, 0, 102, .9);*/
     /*background-color: rgba(255, 255, 255, 0.82);*/
     background-color: rgba(53, 53, 53, 0.21);
+    background-color: rgba(0, 0, 0, 0.33);
   }
 
   &__header {
@@ -45,7 +46,7 @@
       margin-bottom: 1rem;
       font-size: 2.25rem;
       line-height: 1.2;
-      font-weight: 700;
+      font-weight: 200;
       letter-spacing: -.5px;
 
       @include mq(l) {
@@ -58,6 +59,7 @@
       line-height: 1.4;
       font-weight: 200;
       width: 100%;
+      color: rgba($white, .79);
   
       @include mq(l) {
         margin: 0 auto 3rem;
@@ -68,6 +70,14 @@
 
     p {
       margin-bottom: 1rem;
+    }
+
+    a.sly {
+      padding-top: 1rem;
+      display: inline-block;
+      color: #fff;
+      opacity: .8;
+      letter-spacing: .25px;
     }
   }
 }
