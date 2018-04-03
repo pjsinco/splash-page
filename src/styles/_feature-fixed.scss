@@ -4,9 +4,13 @@
   margin-bottom: 1rem;
   padding-bottom: 1.25rem;
   font-weight: 400;
-  font-size: 42px;
+  font-size: 32px;
   line-height: 1.2;
   color: $navy;
+
+  @include mq(l) {
+    font-size: 42px;
+  }
 }
 
 %h2-after {
@@ -16,7 +20,13 @@
   bottom: 0;
   width: 100%;
   padding-bottom: 1rem;
-  border-bottom: 3px solid #ffaa00;
+  border-bottom-color: $orange;
+  border-bottom-style: solid;
+  border-bottom-size: 2px;
+
+  @include mq(l) {
+    border-bottom-size: 3px
+  }
 }
 
 %h5-base {
@@ -81,7 +91,7 @@
   }
 
   @include mq(l) {
-    background-position: 7% 80%;
+    background-position: 7% 100%;
 
     &.img-students {
       background-image: url('images/bg-laptop-students-warm.jpg');

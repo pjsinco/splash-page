@@ -1,0 +1,94 @@
+%col-base {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.footer {
+  padding: 1.5rem;
+  background-color: $warm;
+}
+
+.footer__container {
+  display: flex;
+  flex: 1 0 auto;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-top: 4.375rem;
+  padding-bottom: 4.375rem;
+  text-align: center;
+
+  @include mq(l) {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  & .col-2 {
+    @extend %col-base;
+
+    @include mq(l) {
+      -ms-flex-preferred-size: 16.6666666667%;
+      flex-basis: 16.6666666667%;
+      max-width: 16.6666666667%;
+    }
+  }
+
+  & .col-3 {
+    @extend %col-base;
+
+    @include mq(l) {
+      -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+      max-width: 25%;
+    }
+  }
+
+  & .col-6 {
+    @extend %col-base;
+
+    @include mq(l) {
+      -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+
+  }
+
+  p, li {
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 400;
+  }
+
+  a {
+    transition: .6s;
+
+    &:hover {
+      color: $teal;
+    }
+  }
+
+  .phone {
+    color: $teal;
+    font-weight: 700;
+    letter-spacing: .5px;
+  }
+
+}
+
+.footer-logo {
+  display: block;
+  width: auto;
+  height: 55px;
+  background: url('images/aoa-logo-alone.svg');
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: contain;
+
+  @include mq(l) {
+    background-position: 0 100%;
+
+  }
+}
+
+
+
+
