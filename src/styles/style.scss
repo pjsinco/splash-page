@@ -69,13 +69,14 @@ strong {
   top: 50px;
 }
 
-.stuck,
-.fixed {
+.stuck {
   position: fixed;
-  top: 0px;
-  left: 0;
-  right: 0;
+  top: 68px;
   z-index: 10;
+}
+
+.stuck--no-offset {
+
 }
 
 .container-fluid {

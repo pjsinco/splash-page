@@ -19,7 +19,7 @@ $(document).ready(function() {
     })
   }
 
-  // Animated fx
+  // Titlebars
   for (let i = 0, l = animations.length; i < l; i++) {
     new Waypoint({
       element: animations[i],
@@ -36,8 +36,15 @@ $(document).ready(function() {
       //offset: 64, 
     })
   }
-  
 
+  $('.titlebar').each(function(i, item) {
+    new Waypoint.Sticky({
+      element: $(item),
+      offset: 68,
+    })
+  })
+  
+  // Expanded news 
   const fan = new Waypoint({
     element: document.querySelector('.fan'),
     handler: function(direction) {
@@ -47,12 +54,7 @@ $(document).ready(function() {
     offset: '25%',
   })
 
-  $('.titlebar').each(function(i, item) {
-    new Waypoint.Sticky({
-      element: $(item),
-    })
-  })
-
+  // My AOA screen animation
   new Waypoint({
     element: document.querySelector('#myAoa'),
     handler: function(direction) {
@@ -67,6 +69,7 @@ $(document).ready(function() {
     offset: '25%',
   })
 
+  // Scroll-down icon
   $('.scroll-down').on('click', function(evt) {
     event.preventDefault()
     smoothScroll($('#audienceStudents'))
