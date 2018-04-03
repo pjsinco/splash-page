@@ -5,7 +5,7 @@
   border-radius: 5px;
   text-align: center;
   color: #fff;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 16px;
   line-height: 20px;
   letter-spacing: .5px;
@@ -27,4 +27,25 @@
 .btn-blue {
   border-color: $navy;
   background-color: $navy;
+
+  &-outline {
+    color: $navy;
+  }
+
+  &-rev {
+    color: $white;
+    border-color: $white;
+  }
+}
+
+.btn-teal {
+  &-rev {
+    color: $white;
+    border-color: $white;
+
+    &:hover {
+      color: $teal;
+    }
+  }
+  
 }
