@@ -4,6 +4,11 @@
   text-align: center;
   width: 100%;
   background-color: $orange;
+  transition: transform .5s ease-in;
+
+  &.stuck {
+    transform: translateY(-68px)
+  }
 
   h2 {
     font-weight: 400;
