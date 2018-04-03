@@ -14,8 +14,10 @@
 
 .fan {
   position: relative;
-  height: 680px;
-  margin-bottom: 4rem;
+  /*height: 680px;*/
+  height: 520px;
+  width: 22%;
+  margin: 0 auto 4rem;
   text-align: center;
 
   & img {
